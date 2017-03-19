@@ -43,5 +43,8 @@ namespace SimpleEmployeeManagement.Employees
                     );
             await _employeeDomainService.CreateAsync(employee);
         }
+
+        public async Task<double> GetAverageSalaryByNationality(string nationality)
+            => await _employeeDomainService.GetAverageSalary(new NationalityEmployeeSpecification(nationality));
     }
 }
